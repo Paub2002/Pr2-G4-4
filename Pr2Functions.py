@@ -55,6 +55,7 @@ def extract_frames(video_input_file, video_output_file):
     utility.execute_command(command)
 
 
+
 def process_video_metrics(video_files, q):
     all_metrics = {}
     
@@ -97,9 +98,11 @@ def process_video_metrics(video_files, q):
     colors = ['r', 'g', 'b', 'c', 'm']
     plt.figure(figsize=(15, 5))
     
+
     # MSE
     plt.subplot(1, 3, 1)
     for i, video in enumerate(video_files):
+
         frames = all_metrics[video]['frames']
         mse_vals = all_metrics[video]['metrics']['mse']
         plt.plot(frames, mse_vals, color=colors[i % len(colors)], label=os.path.basename(video))
